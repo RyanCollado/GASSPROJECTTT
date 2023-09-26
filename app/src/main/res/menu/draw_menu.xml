@@ -1,0 +1,26 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+    <group>
+        <item
+            android:id="@+id/nav_account"
+            android:icon="@drawable/ic_accountbox"
+            android:title="Account" />
+
+        <item
+            android:id="@+id/nav_settings"
+            android:icon="@drawable/ic_settingcog"
+            android:title="Settings" />
+
+        <item
+            android:id="@+id/nav_guide"
+            android:icon="@drawable/ic_guidebook"
+            android:title="Guidebook" />
+    </group>
+</menu>
+
+
+
+
+
+

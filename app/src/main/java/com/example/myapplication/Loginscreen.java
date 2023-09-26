@@ -6,7 +6,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -30,7 +29,7 @@ public class Loginscreen extends AppCompatActivity {
         // Check if user is signed in (non-null) and update UI accordingly.
         FirebaseUser currentUser = mAuth.getCurrentUser();
         if(currentUser != null){
-            Intent intent = new Intent(getApplicationContext(),MainMenu.class);
+            Intent intent = new Intent(getApplicationContext(), Menu.class);
             startActivity(intent);
             finish();
         }
@@ -48,7 +47,7 @@ public class Loginscreen extends AppCompatActivity {
 
         mAuth=FirebaseAuth.getInstance();
 
-        usrnameEditText=findViewById(R.id.usrname);
+        usrnameEditText=findViewById(R.id.Email);
         passwordEditText=findViewById(R.id.password);
         progressBar= findViewById(R.id.progressbar);
 
@@ -57,7 +56,7 @@ public class Loginscreen extends AppCompatActivity {
         registerbut.setOnClickListener(new View.OnClickListener() {
             @Override
              public void onClick(View view) {
-             Intent intent = new Intent (Loginscreen.this, MainActivity.class);
+             Intent intent = new Intent (Loginscreen.this, Register.class);
              startActivity(intent);
     }
 });
@@ -91,7 +90,7 @@ public class Loginscreen extends AppCompatActivity {
                                 progressBar.setVisibility(View.GONE);
                                 if (task.isSuccessful()) {
                                    Toast.makeText(getApplicationContext(), "Login Successful", Toast.LENGTH_SHORT).show();
-                                   Intent intent = new Intent(getApplicationContext(),MainMenu.class);
+                                   Intent intent = new Intent(getApplicationContext(), Menu.class);
                                    startActivity(intent);
                                    finish();
                                 } else {

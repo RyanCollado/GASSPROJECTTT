@@ -1,8 +1,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools">
-<uses-permission android:name="android.permission.INTERNET">
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.example.myapplication"> <!-- Replace with your actual package name -->
 
-</uses-permission>
+    <!-- Permissions and other manifest elements -->
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -14,26 +15,35 @@
         android:theme="@style/Theme.Material3.Light"
         tools:targetApi="31">
 
-        <!-- Loginscreen activity is now the launcher activity -->
+        <!-- Activities -->
+        <activity
+            android:name=".Guide"
+            android:exported="false"
+            android:theme="@style/Theme.Material3.Light.NoActionBar"/>
+        <activity
+            android:name=".Settings"
+            android:exported="false"
+            android:theme="@style/Theme.Material3.Light.NoActionBar"/>
         <activity
             android:name=".Loginscreen"
-            android:theme="@style/Theme.Material3.Light.NoActionBar"
-            android:exported="true">
+            android:exported="true"
+            android:theme="@style/Theme.Material3.Light.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-        <!-- Remove the intent-filter from MainActivity -->
         <activity
-            android:name=".MainMenu"
-            android:theme="@style/Theme.Material3.Light.NoActionBar"
-            android:exported="false" />
+            android:name=".Menu"
+            android:exported="false"
+            android:theme="@style/Theme.Material3.Light.NoActionBar" />
         <activity
-            android:name=".MainActivity"
-            android:theme="@style/Theme.Material3.Light.NoActionBar"
-            android:exported="false" />
+            android:name=".Account"
+            android:exported="false"
+            android:theme="@style/Theme.Material3.Light.NoActionBar" />
+        <activity
+            android:name=".Register"
+            android:exported="false"
+            android:theme="@style/Theme.Material3.Light.NoActionBar" />
     </application>
-
 </manifest>

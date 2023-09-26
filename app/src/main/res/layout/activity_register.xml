@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/buttongradient"
-    tools:context=".MainActivity">
+    tools:context=".Register">
 
     <ProgressBar
         android:id="@+id/progressbar"
@@ -61,7 +61,7 @@
         android:ems="10"
         android:textColor="@color/white"
         android:inputType="text"
-        android:hint="Username:"
+        android:hint="Email:"
         android:textColorHint="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
