@@ -1,6 +1,7 @@
 {
   "project_info": {
     "project_number": "857875002690",
+    "firebase_url": "https://gass-database-default-rtdb.asia-southeast1.firebasedatabase.app",
     "project_id": "gass-database",
     "storage_bucket": "gass-database.appspot.com"
   },

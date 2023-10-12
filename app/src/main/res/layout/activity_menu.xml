@@ -31,21 +31,29 @@
             android:layout_height="match_parent">
 
 
+
             <ImageView
-                android:id="@+id/disconnected_tank"
+                android:id="@+id/tankimg"
                 android:layout_width="320dp"
                 android:layout_height="281dp"
                 android:layout_gravity="center"
                 android:layout_marginBottom="70dp"
-                app:srcCompat="@drawable/notank" />
+                app:srcCompat="@drawable/greentank" />
+
+
 
             <ImageView
-                android:id="@+id/disconnected_text"
+                android:id="@+id/tank_text"
                 android:layout_width="309dp"
                 android:layout_height="40dp"
                 android:layout_gravity="center"
                 android:layout_marginTop="100dp"
-                app:srcCompat="@drawable/disconnected" />
+                app:srcCompat="@drawable/no_leakage" />
+
+
+
+
+
         </FrameLayout>
     </LinearLayout>
 

@@ -72,25 +72,25 @@ public class Account extends AppCompatActivity implements NavigationView.OnNavig
 
         int itemId = item.getItemId();
         if (itemId == R.id.nav_account) {
-            Intent accountIntent = new Intent(this, Account.class);
-            startActivity(accountIntent);
-        }
-        else if (itemId == R.id.nav_settings) {
-            Intent settingsIntent = new Intent(this, Settings.class);
-            startActivity(settingsIntent);
+            Intent intent = new Intent(Account.this, Account.class);
+            startActivity(intent);
+        } else if (itemId == R.id.nav_settings) {
+            Intent intent = new Intent(Account.this, Settings.class);
+            startActivity(intent);
+        } else if (itemId == R.id.nav_guide) {
+            Intent intent = new Intent(Account.this, Guide.class);
+            startActivity(intent);
         }
 
-        else if (itemId == R.id.nav_guide) {
-            Intent guideIntent = new Intent(this, Guide.class);
-            startActivity(guideIntent);
-        }
+        // Optionally, set the selected item visually in the NavigationView
+        item.setChecked(true);
+
 
 
 
 
         return true;
     }
-
 
     @Override
     public void onBackPressed()

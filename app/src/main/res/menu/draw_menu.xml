@@ -1,6 +1,7 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:showIn="navigation_view">
+    tools:showIn="navigation_view"
+    android:id="@+id/navigation_menu">
     <group>
         <item
             android:id="@+id/nav_account"
@@ -16,6 +17,11 @@
             android:id="@+id/nav_guide"
             android:icon="@drawable/ic_guidebook"
             android:title="Guidebook" />
+
+        <item
+            android:id="@+id/nav_menu"
+            android:icon="@drawable/ic_guidebook"
+            android:title="Menu" />
     </group>
 </menu>
 
