@@ -110,8 +110,8 @@
     <ImageView
         android:id="@+id/imageView"
 
-        android:layout_width="227dp"
-        android:layout_height="191dp"
+        android:layout_width="303dp"
+        android:layout_height="275dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
@@ -120,9 +120,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.111"
-        app:srcCompat="@drawable/group_1" />
-
+        app:layout_constraintVertical_bias="0.072"
+        app:srcCompat="@drawable/gasss_logo" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

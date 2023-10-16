@@ -38,7 +38,7 @@
                 android:layout_height="281dp"
                 android:layout_gravity="center"
                 android:layout_marginBottom="98dp"
-                app:srcCompat="@drawable/group_1" />
+                app:srcCompat="@drawable/gasss_logo" />
 
 
             <TextView
