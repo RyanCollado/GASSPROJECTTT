@@ -14,9 +14,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Material3.Light"
         tools:targetApi="31">
-        <activity
-            android:name=".NotificationActivity"
-            android:exported="false" />
+
         <!-- Activities -->
         <activity
             android:name=".Guide"

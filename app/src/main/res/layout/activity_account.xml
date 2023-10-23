@@ -6,77 +6,228 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
-    android:background="@drawable/buttongradient"
+    android:background="@color/snow"
     tools:context=".Account"
     tools:openDrawer="start">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:orientation="vertical">
 
 
-
-        <androidx.appcompat.widget.Toolbar
-            android:id="@+id/toolbar"
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            android:elevation="4dp"
-            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
-
-            app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
-
-        <FrameLayout
-            android:id="@+id/fragment_container"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
+            android:layout_height="250dp"
+            android:background="@drawable/buttongradient">
+            <include
+                layout="@layout/toolbar"/>
 
             <ImageView
-
-                android:layout_width="320dp"
-                android:layout_height="281dp"
-                android:layout_gravity="center"
-                android:layout_marginBottom="98dp"
+                android:id="@+id/logo"
+                android:layout_width="350dp"
+                android:layout_height="300dp"
+                android:layout_centerInParent="true"
                 app:srcCompat="@drawable/gasss_logo" />
 
 
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="15dp"
+            android:layout_margin="15dp"
+            android:background="@drawable/border">
+
+            <ImageView
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:id="@+id/ic_profile"
+                android:background="@drawable/ic_account"/>
             <TextView
-                android:id="@+id/textView"
-                android:layout_width="320dp"
-                android:layout_height="55dp"
-                android:layout_gravity="center"
-                android:layout_marginTop="98dp"
-                android:text="XDXDX"
-                app:srcCompat="@drawable/group_1"
-                android:textSize="30sp"
-                android:textStyle="bold"
-                android:textColor="@color/white"/>
-
-
-            <Button
-                android:id="@+id/logout"
-                android:layout_width="184dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginTop="160dp"
-                android:text="Logout"
-                app:srcCompat="@drawable/group_1" />
+                android:layout_alignStart="@+id/ic_profile"
+                android:hint="Loading"
+                android:layout_marginStart="50dp"
+                android:textSize="18sp"
+                android:id="@+id/fullnametxt"/>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="20dp"
+                android:layout_below="@+id/fullnametxt"
+                android:background="@android:color/darker_gray"
+                android:id="@+id/divider_name"/>
+
+
+            <ImageView
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:id="@+id/ic_email"
+                android:background="@drawable/ic_email"
+                android:layout_below="@id/divider_name"
+                android:layout_marginTop="20dp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignStart="@+id/ic_email"
+                android:hint="Loading"
+                android:layout_marginStart="50dp"
+                android:layout_below="@id/divider_name"
+                android:layout_marginTop="20dp"
+                android:textSize="18sp"
+                android:id="@+id/emailtxt"/>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="20dp"
+                android:layout_below="@+id/emailtxt"
+                android:background="@android:color/darker_gray"
+                android:id="@+id/divider_email"/>
+
+            <ImageView
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:id="@+id/ic_mobile"
+                android:background="@drawable/ic_number"
+                android:layout_below="@id/divider_email"
+                android:layout_marginTop="20dp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignStart="@+id/ic_mobile"
+                android:hint="Loading"
+                android:layout_marginStart="50dp"
+                android:layout_below="@id/divider_email"
+                android:layout_marginTop="20dp"
+                android:textSize="18sp"
+                android:id="@+id/mobiletxt"/>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="20dp"
+                android:layout_below="@+id/mobiletxt"
+                android:background="@android:color/darker_gray"
+                android:id="@+id/divider_mobile"/>
+
+
+            <ImageView
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:id="@+id/ic_devkey"
+                android:background="@drawable/ic_devkey"
+                android:layout_below="@id/divider_mobile"
+                android:layout_marginTop="20dp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignStart="@+id/ic_devkey"
+                android:hint="Loading"
+                android:layout_marginStart="50dp"
+                android:layout_below="@id/divider_mobile"
+                android:layout_marginTop="20dp"
+                android:textSize="18sp"
+                android:id="@+id/devkeytxt"/>
+
+            <ProgressBar
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="?android:attr/progressBarStyleLarge"
+                android:layout_centerVertical="true"
+                android:layout_centerHorizontal="true"
+                android:elevation="10dp"
+                android:visibility="gone"
+                android:id="@+id/progressBar"/>
 
 
 
 
-        </FrameLayout>
+        </RelativeLayout>
+
+
+
+        <!--   <FrameLayout
+               android:id="@+id/fragment_container"
+               android:layout_width="match_parent"
+               android:layout_height="match_parent">
+
+
+               <ImageView
+
+                   android:layout_width="320dp"
+                   android:layout_height="222dp"
+                   android:layout_gravity="center"
+                   android:layout_marginBottom="200dp"
+                   app:srcCompat="@drawable/gasss_logo"
+                   />
+
+               <TextView
+                   android:id="@+id/textView"
+                   android:layout_width="320dp"
+                   android:layout_height="55dp"
+                   android:layout_gravity="center"
+                   android:layout_marginTop="0dp"
+
+                   android:textSize="30sp"
+                   android:textStyle="bold"
+                   android:textColor="@color/white"/>
+
+               <TextView
+                   android:id="@+id/textView2"
+                   android:layout_width="320dp"
+                   android:layout_height="55dp"
+                   android:layout_gravity="center"
+                   android:layout_marginTop="53dp"
+
+                   android:textSize="30sp"
+                   android:textStyle="bold"
+                   android:textColor="@color/white"/>
+
+
+               <TextView
+                   android:id="@+id/textView3"
+                   android:layout_width="320dp"
+                   android:layout_height="55dp"
+                   android:layout_gravity="center"
+                   android:layout_marginTop="110dp"
+                   android:textColor="@color/white"
+                   android:textSize="30sp"
+                   android:textStyle="bold"
+                    />
+
+
+
+           </FrameLayout> -->
+
+
+        <Button
+            android:id="@+id/logoutbut"
+            android:layout_width="272dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="70dp"
+            android:layout_marginTop="50dp"
+            android:layout_marginRight="70dp"
+            android:backgroundTint="@color/blue"
+            android:text="Logout"
+            app:backgroundTint="@null"
+            />
+
 
 
     </LinearLayout>
-
-    <com.google.android.material.navigation.NavigationView
-        android:id="@+id/nav_view"
-        android:layout_width="wrap_content"
+    <RelativeLayout
+        android:layout_width="300dp"
         android:layout_height="match_parent"
-        android:layout_gravity="start"
-        app:headerLayout="@layout/nav_header"
-        app:menu="@menu/draw_menu" />
+        android:background="@color/white"
+        android:layout_gravity="start">
+
+
+        <include
+            layout="@layout/nav_drawer"/>
+
+    </RelativeLayout>
+
 
 </androidx.drawerlayout.widget.DrawerLayout>

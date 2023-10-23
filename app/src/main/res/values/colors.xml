@@ -2,7 +2,12 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="blue">#4CC9F0</color>
     <color name="greenColor">#00FF00</color>
     <color name="yellowColor">#FFFF00</color>
     <color name="redColor">#FF0000</color>
+    <color name="snow">#E4ECFC</color>
+    <color name="cream">#D1DDF8</color>
+    <color name="dblue">#3E77B6</color>
+    <color name="yalow">#F4BC1C</color>
 </resources>

@@ -3,4 +3,6 @@
 
     <string name="navigation_draw_open">Open navigation drawer</string>
     <string name="navigation_draw_close"> Close navigation drawer</string>
+    <string name="register"><u>Register</u></string>
+    <string name="login"><u>Login</u></string>
 </resources>

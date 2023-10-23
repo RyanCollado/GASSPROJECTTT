@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+ <!--<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -124,4 +124,202 @@
         app:srcCompat="@drawable/gasss_logo" />
 
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout> -->
+
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/snow"
+    tools:context=".Loginscreen">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            android:orientation="vertical"
+            android:background="@drawable/buttongradient">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="10dp"
+                app:srcCompat="@drawable/gasss_logo"
+                android:id="@+id/logo"
+                />
+
+
+
+        </LinearLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="15dp"
+            android:layout_marginTop="-50dp"
+            android:background="@drawable/border"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp">
+
+
+
+
+           <RelativeLayout
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:id="@+id/email_rl"
+               android:layout_marginTop="20dp"
+               android:background="@drawable/border">
+               
+               <ImageView
+                   android:layout_width="35dp"
+                   android:layout_height="35dp"
+                   android:id="@+id/imgemail"
+                   android:src="@drawable/ic_email"
+                   android:layout_centerVertical="true"
+                   android:layout_marginLeft="10dp"
+                   android:layout_marginRight="10dp"/>
+               <TextView
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:id="@+id/textView_login_email"
+                   android:text="Email*"
+                   android:padding="6dp"
+                  android:layout_toEndOf="@id/imgemail"/>
+               <View
+                   android:layout_width="250dp"
+                   android:layout_height="1dp"
+                   android:layout_centerHorizontal="true"
+                   android:layout_marginTop="5dp"
+                   android:layout_below="@id/textView_login_email"
+                   android:background="@android:color/darker_gray"/>
+
+               <EditText
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:id="@+id/editText_login_email"
+                   android:layout_below="@+id/textView_login_email"
+                   android:hint="Enter email"
+                   android:inputType="textEmailAddress"
+                   android:padding="6dp"
+                   android:textSize="16sp"
+                   android:layout_toEndOf="@id/imgemail"
+                   android:layout_marginTop="10dp"
+                   android:layout_marginBottom="10dp"
+                   android:background="@android:color/transparent"/>
+           </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+               android:id="@+id/pass_rl"
+                android:layout_below="@id/email_rl"
+                android:background="@drawable/border"
+                android:layout_marginTop="10dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/textView_login_password"
+                    android:layout_toEndOf="@+id/imgepass"
+                    android:text="Password*"
+                    android:padding="6dp"
+                    />
+
+                <ImageView
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:id="@+id/imgepass"
+                    android:src="@drawable/ic_password"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"/>
+                <View
+                    android:layout_width="250dp"
+                    android:layout_height="1dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_below="@id/textView_login_password"
+                    android:background="@android:color/darker_gray"/>
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/editText_login_password"
+                    android:layout_below="@+id/textView_login_password"
+                    android:hint="Enter Password"
+                    android:inputType="textPassword"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:layout_toEndOf="@id/imgepass"
+                    android:padding="6dp"
+                    android:textSize="16sp"
+                    android:background="@android:color/transparent"/>
+            </RelativeLayout>
+
+            <Button
+                android:layout_width="180dp"
+                android:layout_height="wrap_content"
+                android:text="Login"
+                android:id="@+id/button_login"
+                android:layout_below="@+id/pass_rl"
+            android:layout_centerHorizontal="true"
+                android:layout_marginTop="30dp"
+                android:layout_marginLeft="70dp"
+                app:backgroundTint="@null"
+                android:backgroundTint="@color/blue"
+                />
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/text_register"
+                android:layout_marginTop="10dp"
+                android:layout_below="@+id/button_login"
+                android:text="Don't have an account?"
+                android:textAlignment="center"
+                />
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/register"
+        android:textAlignment="center"
+        android:id="@+id/linkreg"
+        android:layout_below="@+id/text_register"
+        android:textColor="@color/blue"/>
+
+
+
+
+
+
+
+
+            <ProgressBar
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="?android:attr/progressBarStyleLarge"
+                android:layout_centerVertical="true"
+                android:layout_centerHorizontal="true"
+                android:elevation="10dp"
+                android:visibility="gone"
+                android:id="@+id/progressBar"/>
+
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+
+
+</ScrollView>
+
+
+

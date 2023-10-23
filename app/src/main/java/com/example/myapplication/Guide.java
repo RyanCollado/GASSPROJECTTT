@@ -7,14 +7,21 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
 
 import com.google.android.material.navigation.NavigationView;
 
-public class Guide extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
-    private DrawerLayout drawer;
+public class Guide extends AppCompatActivity {
+    DrawerLayout drawer;
+    ImageView menu;
+
+    LinearLayout Menu,Guide,Aaccount;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -22,53 +29,74 @@ public class Guide extends AppCompatActivity implements NavigationView.OnNavigat
 
 
         drawer = findViewById(R.id.drawer_layout);
-        Toolbar toolbar = findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
+        menu= findViewById(R.id.menu);
+        Menu=findViewById(R.id.Menu);
+        Guide=findViewById(R.id.Guidebook);
+        Aaccount=findViewById(R.id.account);
 
 
-        ActionBarDrawerToggle toggle= new ActionBarDrawerToggle(this, drawer,toolbar,R.string.navigation_draw_open,R.string.navigation_draw_close);
-        drawer.addDrawerListener(toggle);
-        toggle.syncState();
-        NavigationView navigationView = findViewById(R.id.nav_view);
-        navigationView.setNavigationItemSelectedListener(this);
 
+        menu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openDrawer(drawer);
+            }
+        });
+
+        Menu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                redirectActivity(Guide.this,Menu.class);
+            }
+        });
+
+
+        Guide.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                recreate();
+            }
+        });
+
+
+
+        Aaccount.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                redirectActivity(Guide.this,Account.class);
+            }
+        });
+
+
+
+
+
+
+    }
+
+    public static void openDrawer(DrawerLayout drawerLayout){
+        drawerLayout.openDrawer(GravityCompat.START);
+    }
+    public static void closeDrawer(DrawerLayout drawerLayout){
+        if (drawerLayout.isDrawerOpen(GravityCompat.START)){
+            drawerLayout.closeDrawer(GravityCompat.START);
+        }
+    }
+
+
+    public static void redirectActivity(Activity activity, Class secondActivity){
+        Intent intent = new Intent (activity, secondActivity);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        activity.startActivity(intent);
+        activity.finish();
     }
 
 
     @Override
-    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-
-
-        int itemId = item.getItemId();
-        if (itemId == R.id.nav_account) {
-            Intent accountIntent = new Intent(this, Account.class);
-            startActivity(accountIntent);
-        }
-        else if (itemId == R.id.nav_settings) {
-            Intent settingsIntent = new Intent(this, Settings.class);
-            startActivity(settingsIntent);
-        }
-
-        else if (itemId == R.id.nav_guide) {
-            Intent guideIntent = new Intent(this, Guide.class);
-            startActivity(guideIntent);
-        }
-
-
-
-
-        return true;
+    protected void onPause(){
+        super.onPause();
+        closeDrawer(drawer);
     }
 
-    @Override
-    public void onBackPressed()
-    {
-        if (drawer.isDrawerOpen(GravityCompat.START)){
-            drawer.closeDrawer(GravityCompat.START);
-        } else{
-            super.onBackPressed()  ;
-        }
 
-
-    }
 }
